@@ -117,7 +117,6 @@ namespace ET.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, DailyExpence expence)
         {
-            //DailyExpence exp = new DailyExpence(); exp.CategoryId = expence.CategoryId;
             try
             {
                 if (ModelState.IsValid)
