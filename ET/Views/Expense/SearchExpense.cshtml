@@ -1,0 +1,46 @@
+﻿@model IEnumerable<ET.Models.DailyExViewModel> 
+
+@{
+    ViewData["Title"] = "SearchExpense";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form asp-controller="Expense" asp-action="SearchExpense">
+    <p>
+        From Date: <input type="date" name="fromDate" />
+        To Date: <input type="date" name="toDate" />
+        <input type="submit" value="Search" />
+    </p>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExpenceDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amount)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CategoryName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ExpenceDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Amount)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
